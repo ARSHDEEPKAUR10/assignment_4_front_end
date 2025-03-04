@@ -1,1 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Survey Form</title>
+    <link rel="stylesheet" href="Styles.css">
+</head>
+
+<body>
+    <div class="survey-container">
+        <form id="survey-form" action="https://httpbin.org/post" method="POST">
+            <fieldset>
+                <legend>Survey Form</legend>
+                
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
+                    <span class="error-message" id="name-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Your email" required>
+                    <span class="error-message" id="email-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>Gender:</label>
+                    <label><input type="radio" name="gender" value="Male"> Male</label>
+                    <label><input type="radio" name="gender" value="Female"> Female</label>
+                    <label><input type="radio" name="gender" value="Other"> Other</label>
+                    <span class="error-message" id="gender-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>Interests:</label>
+                    <label><input type="checkbox" name="interests" value="Music"> Music</label>
+                    <label><input type="checkbox" name="interests" value="Sports"> Sports</label>
+                    <label><input type="checkbox" name="interests" value="Travel"> Travel</label>
+                </div>
+
+                <div class="form-group">
+                    <label for="country">Country:</label>
+                    <select id="country" name="country">
+                        <option value="">Select a country</option>
+                        <option value="USA">USA</option>
+                        <option value="Canada">Canada</option>
+                        <option value="UK">UK</option>
+                    </select>
+                    <span class="error-message" id="country-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" placeholder="Username (Alphanumeric)" pattern="^[A-Za-z0-9]+$" required>
+                    <span class="error-message" id="username-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="DOB">Date of Birth:</label>
+                    <input type="date" id="DOB" name="DOB" required>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit">Submit Survey</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

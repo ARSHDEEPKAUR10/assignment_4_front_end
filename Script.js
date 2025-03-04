@@ -41,6 +41,17 @@ document.getElementById('survey-form').addEventListener('submit', function (e) {
     }
 });
 
+// Helper functions for validation
+function showError(fieldId, message) {
+    document.getElementById(fieldId + '-error').textContent = message;
+}
+
+function clearErrors() {
+    const errorMessages = document.querySelectorAll('.error-message');
+    errorMessages.forEach(function (error) {
+        error.textContent = '';
+    });
+}
 
 function validateEmail(email) {
     const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
